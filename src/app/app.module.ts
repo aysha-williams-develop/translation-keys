@@ -9,7 +9,7 @@ import { PhraseInputFormComponent } from './components/phrase-input-form/phrase-
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent ,
     FileUploadComponent,
     PhraseInputFormComponent
   ],
