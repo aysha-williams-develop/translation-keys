@@ -22,4 +22,8 @@ describe('PhraseInputFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('phrase is translated', () => {
+    expect(component).toBeTruthy();
+  });
 });
