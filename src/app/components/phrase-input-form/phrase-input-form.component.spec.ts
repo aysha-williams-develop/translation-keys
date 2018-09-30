@@ -8,7 +8,8 @@ describe('PhraseInputFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhraseInputFormComponent ]
+      declarations: [ 
+        PhraseInputFormComponent ]
     })
     .compileComponents();
   }));
@@ -25,9 +26,14 @@ describe('PhraseInputFormComponent', () => {
 
   it('phrase is translated', () => {
     expect(component).toBeTruthy();
+    let textField = fixture.debugElement.nativeElement.querySelector('#phraseInput');
+    textField.text = "hello";
+
+
+
     let button = fixture.debugElement.nativeElement.querySelector('#submitTranslationBtn');
     button.click();
 
-    // expect(component.translatedText).toEqual("Hola");
+    // expect(component.translatedText).toEqual("hola");
   });
 });
