@@ -25,5 +25,9 @@ describe('PhraseInputFormComponent', () => {
 
   it('phrase is translated', () => {
     expect(component).toBeTruthy();
+    let button = fixture.debugElement.nativeElement.querySelector('#submitTranslationBtn');
+    button.click();
+
+    // expect(component.translatedText).toEqual("Hola");
   });
 });

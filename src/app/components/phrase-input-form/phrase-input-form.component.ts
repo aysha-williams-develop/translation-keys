@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-phrase-input-form',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phrase-input-form.component.css']
 })
 export class PhraseInputFormComponent implements OnInit {
-
+  
+  @ViewChild ('translatedText') translatedText: ElementRef;
+  @ViewChild('submitTranslationBtn') submitTranslationBtn: ElementRef;
   constructor() { }
 
   ngOnInit() {
