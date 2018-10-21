@@ -29,7 +29,7 @@ describe('PhraseInputFormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('phrase is translated', () => {
+  it('phrase is translated when button is clicked', () => {
     spyOn(component, 'getTranslation' )
     let textField = fixture.debugElement.nativeElement.querySelector('#phraseInput');
     textField.text = "hello";
@@ -41,8 +41,10 @@ describe('PhraseInputFormComponent', () => {
       expect(component.getTranslation).toHaveBeenCalled();
     })
 
-    // component.getTranslation().
-
-    // expect(component.translatedText).toEqual("hola");
   });
+
+  it('phrase is translated', () => {
+    let translation = component.getTranslation("hello");
+    expect(translation).toEqual("hola")
+  })  
 });
