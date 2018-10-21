@@ -30,12 +30,16 @@ describe('PhraseInputFormComponent', () => {
   });
 
   it('phrase is translated', () => {
-    expect(component).toBeTruthy();
+    spyOn(component, 'getTranslation' )
     let textField = fixture.debugElement.nativeElement.querySelector('#phraseInput');
     textField.text = "hello";
 
     let button = fixture.debugElement.nativeElement.querySelector('#submitTranslationBtn');
     button.click();
+
+    fixture.whenStable().then(() => {
+      expect(component.getTranslation).toHaveBeenCalled();
+    })
 
     // component.getTranslation().
 
