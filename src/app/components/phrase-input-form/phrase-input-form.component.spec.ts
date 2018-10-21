@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhraseInputFormComponent } from './phrase-input-form.component';
+import { TranslatorService } from '../../services/translator.service';
 
 describe('PhraseInputFormComponent', () => {
   let component: PhraseInputFormComponent;
@@ -9,7 +10,11 @@ describe('PhraseInputFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
-        PhraseInputFormComponent ]
+        PhraseInputFormComponent 
+      ],
+      providers: [
+        TranslatorService
+      ]
     })
     .compileComponents();
   }));
@@ -29,10 +34,10 @@ describe('PhraseInputFormComponent', () => {
     let textField = fixture.debugElement.nativeElement.querySelector('#phraseInput');
     textField.text = "hello";
 
-
-
     let button = fixture.debugElement.nativeElement.querySelector('#submitTranslationBtn');
     button.click();
+
+    // component.getTranslation().
 
     // expect(component.translatedText).toEqual("hola");
   });

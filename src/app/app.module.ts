@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { PhraseInputFormComponent } from './components/phrase-input-form/phrase-input-form.component';
+import { TranslatorService } from './services/translator.service';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { PhraseInputFormComponent } from './components/phrase-input-form/phrase-
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [TranslatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

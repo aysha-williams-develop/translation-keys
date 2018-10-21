@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { PhraseInputFormComponent } from './components/phrase-input-form/phrase-input-form.component'
+import { TranslatorService } from './services/translator.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,6 +10,9 @@ describe('AppComponent', () => {
         AppComponent,
         PhraseInputFormComponent
       ],
+      providers: [
+        TranslatorService
+      ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
