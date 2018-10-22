@@ -11,12 +11,20 @@ export class PhraseInputFormComponent implements OnInit {
   
   @ViewChild ('translatedText') translatedText: ElementRef;
   @ViewChild('submitTranslationBtn') submitTranslationBtn: ElementRef;
+  @ViewChild('phraseInput') phraseInput: ElementRef;
 
   constructor(
     private translatorService:TranslatorService
   ) { }
 
   ngOnInit() {
+  }
+
+  onTranslationRequested() {
+    debugger;
+    let phrase = this.phraseInput.nativeElement.value;
+    let translation = this.getTranslation(phrase);
+    this.translatedText.nativeElement.innerHTML = translation;
   }
 
   getTranslation(phrase:string){

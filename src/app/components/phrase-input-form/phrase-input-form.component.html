@@ -1,8 +1,10 @@
 <form id="phrase-input-form">
   <input #phraseInput id="phraseInput" type="text" />
-  <p id="translated-text"></p>
   <input #submitTranslationBtn 
     id="submitTranslationBtn" 
-    (click)="getTranslation(phraseInput.text)" />
+    type="button"
+    value="Translate"
+    (click)="onTranslationRequested(phraseInput.text)">
+      
 </form>
 <div #translatedText id="translated-text"></div>

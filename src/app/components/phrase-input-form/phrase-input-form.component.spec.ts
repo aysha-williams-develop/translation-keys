@@ -46,5 +46,16 @@ describe('PhraseInputFormComponent', () => {
   it('phrase is translated', () => {
     let translation = component.getTranslation("hello");
     expect(translation).toEqual("hola")
-  })  
+  });
+
+  it('displays translated text', () => {
+    let textField = fixture.debugElement.nativeElement.querySelector('#phraseInput');
+    textField.value = "hello";
+
+    let button = fixture.debugElement.nativeElement.querySelector('#submitTranslationBtn');
+    button.click();
+
+    let translation = fixture.debugElement.nativeElement.querySelector('#translated-text');
+    expect(translation.innerHTML).toEqual("hola")
+  });
 });
